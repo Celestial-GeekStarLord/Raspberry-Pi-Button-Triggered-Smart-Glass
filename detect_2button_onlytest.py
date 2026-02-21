@@ -7,15 +7,15 @@ import signal
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-button_1 = 17   # START YOLO
-button_2 = 27   # STOP YOLO
+button_1 = 17   
+button_2 = 27   
 
 GPIO.setup(button_1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(button_2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 print("🔘 Button controller ready")
 
-process = None   # will hold running detect.py process
+process = None   
 
 try:
     while True:

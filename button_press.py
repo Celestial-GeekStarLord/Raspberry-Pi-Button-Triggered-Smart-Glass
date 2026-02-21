@@ -9,7 +9,7 @@ GPIO.setwarnings(False)
 button_1 = 17
 button_2 = 27
 
-# Setup pins as INPUT with internal PULL-DOWN resistors
+
 # This ensures the pin stays at 0V until the button connects it to 3.3V
 GPIO.setup(button_1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(button_2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
