@@ -6,9 +6,9 @@ import os
 import signal
 import sys
 
-# ========================
+
 # GPIO SETUP
-# ========================
+
 BTN_MAIN = 17
 BTN_BACK = 27
 HOLD_TIME = 1.2
@@ -18,9 +18,9 @@ GPIO.setwarnings(False)
 GPIO.setup(BTN_MAIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(BTN_BACK, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-# ========================
+
 # SPEECH OUTPUT
-# ========================
+
 speech_process = None
 
 def speak(text):
@@ -55,9 +55,9 @@ def speak(text):
     except Exception as e:
         print(f"Speech error: {e}")
 
-# ========================
+
 # BUTTON DETECTION
-# ========================
+
 def wait_press(pin):
     while GPIO.input(pin) == GPIO.LOW:
         time.sleep(0.01)
@@ -70,18 +70,18 @@ def wait_press(pin):
     duration = time.time() - start
     return "hold" if duration > HOLD_TIME else "tap"
 
-# ========================
+
 # SCRIPT PATHS
-# ========================
+
 BASE = "/home/pi/Python-3.9.18/yoloo"
 INDOOR_ENV = f"{BASE}/env_in/bin/python"
 YOLO_ENV = f"{BASE}/yolo_env/bin/python"
 INDOOR_SCRIPT = f"{BASE}/indoorai.py"
 YOLO_SCRIPT = f"{BASE}/detect.py"
 
-# ========================
+
 # MAIN LOOP
-# ========================
+
 def main():
     current_mode = "online"
     process = None

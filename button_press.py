@@ -1,11 +1,11 @@
 import RPi.GPIO as GPIO
 import time
 
-# Use BCM numbering (matches GPIO 17 and GPIO 27 labels)
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-# Define your pins
+
 button_1 = 17
 button_2 = 27
 

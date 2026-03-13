@@ -13,14 +13,14 @@ button_2 = 27
 GPIO.setup(button_1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(button_2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-print("🔘 Button controller ready")
+print("Button controller ready")
 
 process = None   
 
 try:
     while True:
 
-        # START BUTTON 
+        
         if GPIO.input(button_1) == GPIO.HIGH:
             if process is None:
                 print("▶ Starting detect.py ...")
@@ -46,7 +46,7 @@ try:
             else:
                 print("⚠ No running process to stop")
 
-            time.sleep(0.5)  # debounce
+            time.sleep(0.5)  
 
         time.sleep(0.01)
 
